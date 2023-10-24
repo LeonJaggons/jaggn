@@ -26,6 +26,7 @@ const inter = Inter({ subsets: ["latin"] });
 export default function Home() {
     return (
         <>
+            <></>
             <Head>
                 <title>Jaggn Design</title>
                 <meta
@@ -145,7 +146,7 @@ export default function Home() {
                     </Text>
                     <HStack h={"full"} spacing={6}>
                         <ExpertiseCard
-                            icon={MdDesignServices}
+                        s    icon={MdDesignServices}
                             title={"WEB DESIGN"}
                             description={
                                 "Ut non repellat minima mollitia quis aut illo sunt."
