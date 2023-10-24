@@ -18,10 +18,18 @@ import {
     Textarea,
     VStack,
 } from "@chakra-ui/react";
-import React from "react";
+import React, { useState } from "react";
 import { MdChat, MdEmail, MdPhone, MdTimelapse } from "react-icons/md";
 
 const Contact = () => {
+    const emptyLead = {
+        firstName: "",
+        lastName: "",
+        email: "",
+        phone: "",
+        description: "",
+    };
+    const [lead, setLead] = useState(emptyLead);
     return (
         <>
             <Stack
@@ -104,7 +112,15 @@ const Contact = () => {
                                 </Heading>
                             </Box>
                             <HStack w={"full"}>
-                                <ContactInput label={"First Name"} />
+                                <ContactInput
+                                    label={"First Name"}
+                                    onChange={(e) =>
+                                        setLead({
+                                            ...lead,
+                                            firstName: e.target.value,
+                                        })
+                                    }
+                                />
                                 <ContactInput label={"Last Name"} />
                             </HStack>
                             <HStack w={"full"}>
