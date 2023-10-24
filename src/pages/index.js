@@ -95,16 +95,8 @@ export default function Home() {
                         GET IN TOUCH
                     </Button>
                 </Box>
-                <Center flex={1}>
-                    {/* <Box
-                            w={"full"}
-                            aspectRatio={1}
-                            borderRadius={"50%"}
-                            bg={BrandColors.Primary}
-                        ></Box> */}
-                </Center>
             </HStack>
-            <VStack px={"10%"} spacing={"220px"} pt={"220px"}>
+            {/* <VStack px={"10%"} spacing={"220px"} pt={"220px"}>
                 <HStack alignItems={"center"} spacing={"18px"}>
                     <Center flex={1}>
                         <Box
@@ -137,7 +129,7 @@ export default function Home() {
                         </Text>
                     </Box>
                 </HStack>
-                {/* <JDDivider /> */}
+                {/* <JDDivider /> 
                 <VStack alignItems={"center"} textAlign={"center"}>
                     <Heading
                         size={"xl"}
@@ -174,11 +166,12 @@ export default function Home() {
                             }
                         />
                     </HStack>
-                </VStack>
+                        </VStack> 
                 <VStack>
                     <Heading></Heading>
-                </VStack>
+                </VStack> 
             </VStack>
+                        */}
         </>
     );
 }
