@@ -81,7 +81,7 @@ const Contact = () => {
                     </HStack>
                     <Heading size={"lg"}></Heading>
                 </VStack>
-                <Card
+                {/* <Card
                     position={"fixed"}
                     borderRadius={0}
                     top={"108px"}
@@ -153,7 +153,7 @@ const Contact = () => {
                             SEND MESSAGE
                         </Button>
                     </Box>
-                </Card>
+                </Card> */}
             </Stack>
             <Box w={"50%"} alignSelf={"flex-start"} pt={"32px"} px={"10%"}>
                 <Heading
