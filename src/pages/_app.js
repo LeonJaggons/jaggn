@@ -97,7 +97,7 @@ const JaggDesignNav = () => {
         <HStack spacing={6} flex={1} justify={"flex-end"}>
             <MenuItem>Home</MenuItem>
             <MenuItem href={"/about"}>About</MenuItem>
-            <MenuItem>Gallery</MenuItem>
+            <MenuItem href={"/gallery"}>Gallery</MenuItem>
             <MenuItem href={"/contact"} button>
                 Contact
             </MenuItem>
