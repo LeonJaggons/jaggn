@@ -25,10 +25,10 @@ const Gallery = () => {
             title: "Mike Smith Aviation",
             url: "https://mike-smith-aviation.web.app/",
         },
-        {
-            title: "MarkIt",
-            url: "https://mark-2kcwlu8wb-leonjaggons-projects.vercel.app/browse/",
-        },
+        // {
+        //     title: "MarkIt",
+        //     url: "https://mark-2kcwlu8wb-leonjaggons-projects.vercel.app/browse/",
+        // },
     ];
     return (
         <>
