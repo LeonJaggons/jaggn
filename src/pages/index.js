@@ -39,6 +39,16 @@ export default function Home() {
                     name="viewport"
                     content="width=device-width, initial-scale=1"
                 />
+                <meta property="og:image" content="/about.jpg" />
+                <meta property="og:url" content="https://www.jaggndesign.com" />
+                <meta
+                    property="og:title"
+                    content="Jaggn Design - Beautiful Web Solutions"
+                />
+                <meta
+                    property="og:description"
+                    content="We create stunning websites, web applications, and digital solutions that elevate your online presence. With a team of experienced designers and developers, we bring your vision to life. Contact us today to transform your digital presence."
+                />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <video
