@@ -15,6 +15,8 @@ import {
     HStack,
     Heading,
     Icon,
+    IconButton,
+    Stack,
     VStack,
     extendTheme,
 } from "@chakra-ui/react";
@@ -22,6 +24,9 @@ import { BrandColors } from "@/styles/colors";
 import NextLink from "next/link";
 import { Link } from "@chakra-ui/next-js";
 import {
+    MdEmail,
+    MdFacebook,
+    MdPhone,
     MdSpeaker,
     MdWbIridescent,
     MdWbTwighlight,
@@ -74,10 +79,12 @@ export default function App({ Component, pageProps }) {
 
 const JaggDesignHeader = () => {
     return (
-        <HStack
+        <Stack
+            direction={["column", "column", "row"]}
             px={"10vw"}
+            align={"center"}
             justify={"space-between"}
-            py={4}
+            py={2}
             maxW={"100%"}
             w={"100vw"}
             // bg={"#191d28"}
@@ -85,20 +92,49 @@ const JaggDesignHeader = () => {
             top={0}
             position={"sticky"}
             zIndex={999}
+            spacing={6}
+            textAlign={["center", "center", "start"]}
         >
             <JaggDesignLogo />
-            <JaggDesignNav />
-        </HStack>
+            <Stack spacing={4}>
+                <HStack justify={["center", "center", "end"]}>
+                    <IconButton
+                        icon={<Icon as={MdFacebook} boxSize={"22px"} />}
+                        variant={"link"}
+                        as={Link}
+                        href={
+                            "https://www.facebook.com/profile.php?id=61552392699824"
+                        }
+                        p={0}
+                    />
+                    <IconButton
+                        icon={<Icon as={MdEmail} boxSize={"22px"} />}
+                        href={"mailto:info@jaggndesign.com"}
+                        variant={"link"}
+                        as={Link}
+                        p={0}
+                    />
+                    <IconButton
+                        icon={<Icon as={MdPhone} boxSize={"22px"} />}
+                        variant={"link"}
+                        as={Link}
+                        href={"tel:7079050264"}
+                        p={0}
+                    />
+                </HStack>
+                <JaggDesignNav />
+            </Stack>
+        </Stack>
     );
 };
 
 const JaggDesignNav = () => {
     return (
-        <HStack spacing={6} flex={1} justify={"flex-end"}>
+        <HStack spacing={6} justify={"flex-end"}>
             <MenuItem>Home</MenuItem>
-            <MenuItem href={"/about"}>About</MenuItem>
+            {/* <MenuItem href={"/about"}>About</MenuItem> */}
             <MenuItem href={"/gallery"}>Gallery</MenuItem>
-            <MenuItem href={"/contact"} button>
+            <MenuItem href={"tel:7079050264"} button>
                 Contact
             </MenuItem>
         </HStack>
@@ -145,7 +181,13 @@ const MenuItem = ({ children, href, button }) => {
 };
 const JaggDesignLogo = () => {
     return (
-        <Link as={NextLink} href={"/"} textDecoration={"none !important"}>
+        <Link
+            as={NextLink}
+            href={"/"}
+            textDecoration={"none !important"}
+            flex={0}
+            w={"fit-content"}
+        >
             <HStack
                 alignItems={"center"}
                 borderBottomColor={BrandColors.Primary}

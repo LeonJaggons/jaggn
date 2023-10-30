@@ -10,6 +10,7 @@ import {
     HStack,
     Heading,
     Icon,
+    Stack,
     Text,
     VStack,
 } from "@chakra-ui/react";
@@ -18,6 +19,7 @@ import {
     MdAppShortcut,
     MdCameraEnhance,
     MdDesignServices,
+    MdPhone,
 } from "react-icons/md";
 import { useState } from "react";
 import Link from "next/link";
@@ -58,12 +60,18 @@ export default function Home() {
             <HStack
                 px="10%"
                 zIndex={998}
-                minH={"calc(100vh - 64px)"}
+                h={[
+                    "calc(100vh - 148px)",
+                    "calc(100vh - 148px)",
+                    "calc(100vh - 82px)",
+                ]}
+                overflow={"hidden"}
                 justify={"flex-start"}
                 w={"100vw"}
                 bg={"rgba(0, 0, 0,.75)"}
                 spacing={"100px"}
                 color={"white"}
+                textAlign={["center", "center", "start"]}
             >
                 <Box flex={2}>
                     <Heading size={"3xl"} letterSpacing={1} mb={4}>
@@ -77,24 +85,46 @@ export default function Home() {
                         Development all located in the United States and looking
                         for work around the globe.
                     </Text>
-                    <Button
-                        as={Link}
-                        href={"/contact"}
-                        bg={"black"}
-                        color={"white"}
-                        borderRadius={0}
-                        padding={"26px"}
-                        letterSpacing={"-1"}
-                        fontWeight={600}
-                        fontFamily={"heading"}
-                        fontSize={"18px"}
-                        _hover={{
-                            bg: "whiteAlpha.200",
-                            color: "white",
-                        }}
-                    >
-                        GET IN TOUCH
-                    </Button>
+                    <Stack direction={["column", "column", "row"]}>
+                        <Button
+                            as={Link}
+                            href={"tel:7079050264"}
+                            bg={"blackAlpha.700"}
+                            color={"white"}
+                            borderRadius={0}
+                            padding={"26px"}
+                            leftIcon={<Icon as={MdPhone} />}
+                            letterSpacing={"-1"}
+                            fontWeight={800}
+                            fontFamily={"heading"}
+                            fontSize={"22px"}
+                            _hover={{
+                                bg: "whiteAlpha.200",
+                                color: "white",
+                            }}
+                            mr={2}
+                        >
+                            CALL NOW
+                        </Button>
+                        {/* <Button
+                            as={Link}
+                            href={"/contact"}
+                            bg={"black"}
+                            color={"white"}
+                            borderRadius={0}
+                            padding={"26px"}
+                            letterSpacing={"-1"}
+                            fontWeight={600}
+                            fontFamily={"heading"}
+                            fontSize={"18px"}
+                            _hover={{
+                                bg: "whiteAlpha.200",
+                                color: "white",
+                            }}
+                        >
+                            GET IN TOUCH
+                        </Button> */}
+                    </Stack>
                 </Box>
             </HStack>
             {/* <VStack px={"10%"} spacing={"220px"} pt={"220px"}>

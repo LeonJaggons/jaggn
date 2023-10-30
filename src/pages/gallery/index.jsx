@@ -6,6 +6,7 @@ import {
     Image,
     Link,
     SimpleGrid,
+    Stack,
     VStack,
 } from "@chakra-ui/react";
 import React from "react";
@@ -36,7 +37,7 @@ const Gallery = () => {
                 px="10%"
                 zIndex={998}
                 maxH={"60vh"}
-                h={"60vh"}
+                h={["calc(60vh - 66px)", "calc(60vh - 66px)", "60vh"]}
                 align={"center"}
                 justify={"center"}
                 w={"100vw"}
@@ -87,12 +88,18 @@ const Gallery = () => {
                 minH={"60vh"}
                 style={{ objectFit: "cover" }}
             />
-            <Box py={12} w={"full"} px={"10%"}>
-                <SimpleGrid columns={1} spacing={12}>
+            <Box w={"full"} px={"0%"} py={"2%"} bg={"white"}>
+                <Stack
+                    direction={["column", "column", "row"]}
+                    overflow={"scroll"}
+                    spacing={12}
+                    pb={8}
+                    px={"5%"}
+                >
                     {work.map((m) => (
                         <WorkCard {...m} />
                     ))}
-                </SimpleGrid>
+                </Stack>
             </Box>
         </>
     );
@@ -100,26 +107,30 @@ const Gallery = () => {
 
 const WorkCard = ({ title, url }) => {
     return (
-        <Card
-            shadow={"md"}
+        <Box
             bg={"white"}
-            borderRadius={0}
+            borderRadius={10}
+            overflow={"hidden"}
             as={Link}
+            textDecor={"none !important"}
             href={url}
             target={"_blank"}
+            w={["100%", "100%", "900px", "900px"]}
+            minW={["100%", "100%", "900px", "900px"]}
+            border={"2px solid rgba(0,0,0,.4)"}
         >
             <Iframe
                 url={url}
                 display={"block"}
+                scrolling={"no"}
                 styles={{
                     aspectRatio: 16 / 9,
                     filter: "grayscale(.25)",
+                    pointerEvents: "none",
                 }}
+                width="100%"
             />
-            <Box p={4} borderTop={"1px solid rgba(0,0,0,.1)"}>
-                <Heading>{title}</Heading>
-            </Box>
-        </Card>
+        </Box>
     );
 };
 
