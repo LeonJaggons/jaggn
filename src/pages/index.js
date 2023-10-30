@@ -39,7 +39,18 @@ export default function Home() {
                     name="viewport"
                     content="width=device-width, initial-scale=1"
                 />
-                <meta property="og:image" content="/about.jpg" />
+                <meta
+                    property="og:image"
+                    content="https://www.jaggndesign.com/about.jpg"
+                />
+                <meta
+                    property="og:image:url"
+                    content="https://www.jaggndesign.com/about.jpg"
+                />
+                <meta
+                    property="og:image:secure_url"
+                    content="https://www.jaggndesign.com/about.jpg"
+                />
                 <meta property="og:url" content="https://www.jaggndesign.com" />
                 <meta
                     property="og:title"
@@ -99,8 +110,8 @@ export default function Home() {
                         <Button
                             as={Link}
                             href={"tel:7079050264"}
-                            bg={"blackAlpha.700"}
-                            color={"white"}
+                            bg={"whiteAlpha.700"}
+                            color={"black"}
                             borderRadius={0}
                             padding={"26px"}
                             leftIcon={<Icon as={MdPhone} />}
