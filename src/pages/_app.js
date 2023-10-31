@@ -23,16 +23,7 @@ import {
 import { BrandColors } from "@/styles/colors";
 import NextLink from "next/link";
 import { Link } from "@chakra-ui/next-js";
-import {
-    MdEmail,
-    MdFacebook,
-    MdPhone,
-    MdSpeaker,
-    MdWbIridescent,
-    MdWbTwighlight,
-    MdWeb,
-    MdWebAsset,
-} from "react-icons/md";
+import { MdEmail, MdFace, MdFacebook, MdPhone } from "react-icons/md";
 const delicious = Delicious_Handrawn({ subsets: ["latin"], weight: ["400"] });
 const dmSans = DM_Sans({
     subsets: ["latin"],
@@ -68,10 +59,8 @@ export default function App({ Component, pageProps }) {
                 w={"100vw"}
                 style={{ maxWidth: "100% !important" }}
             >
+                <Component {...pageProps} />
                 <JaggDesignHeader />
-                <VStack flex={1}>
-                    <Component {...pageProps} />
-                </VStack>
             </Box>
         </ChakraProvider>
     );
@@ -80,57 +69,81 @@ export default function App({ Component, pageProps }) {
 const JaggDesignHeader = () => {
     return (
         <Stack
+            pos={"absolute"}
+            zIndex={999}
             direction={["column", "column", "row"]}
+            bottom={0}
+            left={0}
             px={"10vw"}
             align={"center"}
             justify={"space-between"}
-            py={2}
+            py={4}
             maxW={"100%"}
             w={"100vw"}
-            // bg={"#191d28"}
-            bg={"white"}
-            top={0}
-            position={"sticky"}
-            zIndex={999}
-            spacing={6}
             textAlign={["center", "center", "start"]}
+            bg={"black"}
         >
-            <JaggDesignLogo />
-            <Stack spacing={4}>
-                <HStack justify={["center", "center", "end"]}>
-                    <IconButton
-                        icon={<Icon as={MdFacebook} boxSize={"22px"} />}
-                        variant={"link"}
-                        as={Link}
-                        href={
-                            "https://www.facebook.com/profile.php?id=61552392699824"
-                        }
-                        p={0}
-                    />
-                    <IconButton
-                        icon={<Icon as={MdEmail} boxSize={"22px"} />}
-                        href={"mailto:info@jaggndesign.com"}
-                        variant={"link"}
-                        as={Link}
-                        p={0}
-                    />
-                    <IconButton
-                        icon={<Icon as={MdPhone} boxSize={"22px"} />}
-                        variant={"link"}
-                        as={Link}
-                        href={"tel:7079050264"}
-                        p={0}
-                    />
-                </HStack>
-                <JaggDesignNav />
-            </Stack>
+            <JaggDesignNav />
+            <HStack
+                justify={["space-around", "space-around", "end"]}
+                w={"full"}
+            >
+                <SocialButton
+                    type={"facebook"}
+                    href={
+                        "https://www.facebook.com/profile.php?id=61552392699824"
+                    }
+                    p={0}
+                />
+                <SocialButton
+                    type={"email"}
+                    href={
+                        "mailto:info@jaggndesign.com?subject=I Need a Web Developer!"
+                    }
+                />
+                <SocialButton
+                    type={"phone"}
+                    icon={<Icon as={MdPhone} boxSize={"22px"} />}
+                    href={"tel:7079050264"}
+                />
+            </HStack>
         </Stack>
+    );
+};
+const SocialButton = ({ type, href }) => {
+    const getIcon = (iconType) => {
+        switch (iconType) {
+            case "facebook":
+                return <Icon as={MdFacebook} boxSize={"22px"} />;
+            case "email":
+                return <Icon as={MdEmail} boxSize={"22px"} />;
+            case "phone":
+                return <Icon as={MdPhone} boxSize={"22px"} />;
+        }
+    };
+    return (
+        <IconButton
+            as={Link}
+            variant={"link"}
+            href={href ?? "/"}
+            icon={getIcon(type)}
+            color={"whiteAlpha.800"}
+            _hover={{
+                color: "whiteAlpha.600",
+            }}
+        />
     );
 };
 
 const JaggDesignNav = () => {
     return (
-        <HStack spacing={6} justify={"flex-end"}>
+        <HStack
+            spacing={6}
+            minW={["full", "full", "60vw"]}
+            justify={"space-between"}
+            flex={2}
+            mr={[0, 0, "120px"]}
+        >
             <MenuItem>Home</MenuItem>
             {/* <MenuItem href={"/about"}>About</MenuItem> */}
             <MenuItem href={"/gallery"}>Gallery</MenuItem>
@@ -145,18 +158,18 @@ const MenuItem = ({ children, href, button }) => {
     return button ? (
         <Button
             as={NextLink}
-            bg={"black"}
             borderRadius={0}
             href={href ?? "/"}
-            fontSize={"14px"}
-            fontWeight={400}
+            fontSize={"xl"}
+            color={"whiteAlpha.800"}
+            fontWeight={600}
             fontFamily={"body"}
             letterSpacing={1}
             textDecoration={"none !important"}
-            color={"white"}
+            variant={"ghost"}
             _hover={{
-                bg: "blackAlpha.200",
-                color: "black",
+                bg: "whiteAlpha.200",
+                color: "whiteAlpha.600",
             }}
         >
             {children.toUpperCase()}
@@ -166,13 +179,15 @@ const MenuItem = ({ children, href, button }) => {
             as={NextLink}
             href={href ?? "/"}
             letterSpacing={1}
-            fontSize={"14px"}
-            fontWeight={400}
+            fontSize={"xl"}
             fontFamily={"body"}
             textDecoration={"none !important"}
+            color={"whiteAlpha.800"}
+            fontWeight={600}
             _hover={{
-                color: "black",
-                fontWeight: 600,
+                //occurrence/6D51D44C-07F0-422D-9A48-6480F3E96113?method=show&options=more
+                color: "white",
+                // fontWeight: 600,
             }}
         >
             {children.toUpperCase()}

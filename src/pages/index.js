@@ -81,53 +81,48 @@ export default function Home() {
             <HStack
                 px="10%"
                 zIndex={998}
-                h={[
-                    "calc(100vh - 148px)",
-                    "calc(100vh - 148px)",
-                    "calc(100vh - 82px)",
-                ]}
+                h={"100vh"}
                 overflow={"hidden"}
                 justify={"flex-start"}
                 w={"100vw"}
-                bg={"rgba(0, 0, 0,.75)"}
+                bg={"rgba(0, 0, 0,.70)"}
                 spacing={"100px"}
                 color={"white"}
-                textAlign={["center", "center", "start"]}
+                textAlign={"center"}
             >
                 <Box flex={2}>
-                    <Heading size={"3xl"} letterSpacing={1} mb={4}>
+                    <Heading size={"3xl"} letterSpacing={1}>
                         SOFTWARE, WEB DEVELOPMENT, DESIGN
                     </Heading>
-                    <Heading fontWeight={400} size="lg" mb={4}>
+                    <Heading fontWeight={400} size="lg" my={6}>
                         An all in one solution
                     </Heading>
-                    <Text fontSize={14} lineHeight={2} mb={8}>
+                    <Text fontSize={14} lineHeight={2} mb={12}>
                         Visual Design, Professional Photography, Full Stack Web
                         Development all located in the United States and looking
                         for work around the globe.
                     </Text>
-                    <Stack direction={["column", "column", "row"]}>
-                        <Button
-                            as={Link}
-                            href={"tel:7079050264"}
-                            bg={"whiteAlpha.700"}
-                            color={"black"}
-                            borderRadius={0}
-                            padding={"26px"}
-                            leftIcon={<Icon as={MdPhone} />}
-                            letterSpacing={"-1"}
-                            fontWeight={800}
-                            fontFamily={"heading"}
-                            fontSize={"22px"}
-                            _hover={{
-                                bg: "whiteAlpha.200",
-                                color: "white",
-                            }}
-                            mr={2}
-                        >
-                            CALL NOW
-                        </Button>
-                        {/* <Button
+                    <Button
+                        as={Link}
+                        href={"tel:7079050264"}
+                        bg={"whiteAlpha.700"}
+                        color={"black"}
+                        borderRadius={0}
+                        padding={"26px"}
+                        leftIcon={<Icon as={MdPhone} />}
+                        letterSpacing={"-1"}
+                        fontWeight={800}
+                        fontFamily={"heading"}
+                        fontSize={"22px"}
+                        _hover={{
+                            bg: "whiteAlpha.200",
+                            color: "white",
+                        }}
+                        mr={2}
+                    >
+                        CALL NOW
+                    </Button>
+                    {/* <Button
                             as={Link}
                             href={"/contact"}
                             bg={"black"}
@@ -145,7 +140,6 @@ export default function Home() {
                         >
                             GET IN TOUCH
                         </Button> */}
-                    </Stack>
                 </Box>
             </HStack>
             {/* <VStack px={"10%"} spacing={"220px"} pt={"220px"}>
